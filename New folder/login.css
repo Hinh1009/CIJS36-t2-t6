@@ -1,0 +1,76 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    font-size: 13px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input {
+    width: 350px;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid #ecedec;
+    border-radius: 5px;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(63, 122, 231);
+    text-decoration: underline;
+}
+
+button {
+    width: 350px;
+    height: 38px;
+    padding: 10px;
+    color: #ffffff;
+    background: #0000ff;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.register-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    background: url(https://www.w3schools.com/css/img_mountains.jpg);
+    background-size: cover;
+}
+
+.form-register {
+    max-width: 500px;
+}
+
+.form-header h3 {
+    padding: 70px 50px;
+    font-size: 38px;
+    color: #b948aa;
+    text-align: center;
+}
+
+.form-content {
+    padding: 0px 50px;
+}
+
+.form-content>* {
+    margin-bottom: 10px;
+}
+
+.link {
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button {
+    text-align: center;
+}
