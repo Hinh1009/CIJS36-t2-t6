@@ -1,0 +1,12 @@
+display: flex;
+Cac buoc thao tac :
+1, Dan trang
+2, Khoang cach + kich thuoc
+3, Mau sac
+SEO
+margin: Khoang cach tu the nay den the khac
+border: Vien
+padding: Kc tu text den vien
+
+boolean: Cac gtri tinh la false: 0,"(rong)", null, undefined, NaN, false -> false;
+
