@@ -37,16 +37,18 @@ button:hover {
     cursor: pointer;
 }
 
-.register-container {
+.register-container,
+.log-in-container {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: flex-end;
-    background: url(./session_2_images/register-background.jpg);
+    background: url('../session_2_images/register-background.jpg');
     background-size: cover;
 }
 
-.form-register {
+.form-register,
+.form-log-in {
     max-width: 500px;
     background: #ffffff;
 }
@@ -79,4 +81,9 @@ button:hover {
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
+}
+
+.messageError {
+    color: red;
+    line-height: 25px;
 }
