@@ -30,10 +30,13 @@ components.register = `
                     <input type="password" name="confirmPassword" placeholder="confirm Password">
                     <div id="confirmPasswordError" class="messageError"></div>
                 </div>
+                <div id="register-error" class="messageError"></div>
+                <div id="register-success" class="message-success"></div>
             </div>
+            <div id="login-error" class="messageError"></div>
             <div class="form-footer">
                 <a id="register-link" href="#">Already have an account?Login</a>
-                <button type="submit">Register</button>
+                <button id="register-submit-btn" type="submit">Register</button>
             </div>
 
         </form>
@@ -54,12 +57,15 @@ components.login = `
                     <input type="password" name="password" placeholder="password">
                      <div id="passwordLogInNameError" class="messageError"></div>
                 </div>
+                <div id="log-in-error" class="messageError"></div>
+                <div id="log-in-success" class="message-success"></div>
             </div>
+            <div id="login-error" class="messageError"></div>
             <div class="form-footer">
                 <div class="link"><a href="index.html">Not have an account?Sign up</a>
                     <a id="log-in-link" href="#">Forgot your password?</a>
                 </div>
-                <div class="button"><button type="submit">Login</button></div>
+                <div class="button"><button id="log-in-submit-btn" type="submit" >Login</button></div>
             </div>
         </form>
     </section>

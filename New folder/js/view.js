@@ -39,11 +39,17 @@ view.showComponents = function(name) {
 
                     //     }
                     // }
-                    view.Validate(registerInfo.firstname, `firstNameError`, `Invalid first name!`)
-                    view.Validate(registerInfo.lastname, `lastNameError`, `Invalid last name!`)
-                    view.Validate(registerInfo.email && registerInfo.email.includes('@'), `emailError`, `Invalid email`)
-                    view.Validate(registerInfo.password && registerInfo.password.length >= 6, `passwordError`, `Invalid password`)
-                    view.Validate(registerInfo.confirmPassword && registerInfo.confirmPassword.length >= 6 && registerInfo.password == registerInfo.confirmPassword, `confirmPasswordError`, `Invalid confirm password`)
+                    let ValidateResult = [
+                        view.Validate(registerInfo.firstname, `firstNameError`, `Invalid first name!`),
+                        view.Validate(registerInfo.lastname, `lastNameError`, `Invalid last name!`),
+                        view.Validate(registerInfo.email && registerInfo.email.includes('@'), `emailError`, `Invalid email`),
+                        view.Validate(registerInfo.password && registerInfo.password.length >= 6, `passwordError`, `Invalid password`),
+                        view.Validate(registerInfo.confirmPassword && registerInfo.confirmPassword.length >= 6 && registerInfo.password == registerInfo.confirmPassword, `confirmPasswordError`, `Invalid confirm password`)
+                    ]
+
+                    if (allPassed(ValidateResult)) {
+                        controller.register(registerInfo)
+                    }
                 }
                 break;
             }
@@ -70,22 +76,45 @@ view.showComponents = function(name) {
                         email: form.email.value,
                         password: form.password.value
                     }
-                    view.Validate(logInInfo.email && logInInfo.email.includes(`@`), `emailLogInError`, `Invalid email`)
-                    view.Validate(logInInfo.password && logInInfo.password.length >= 6, `passwordLogInNameError`, `Invalid password`)
+                    let ValidateResult = [
+                        view.Validate(logInInfo.email && logInInfo.email.includes(`@`), `emailLogInError`, `Invalid email`),
+                        view.Validate(logInInfo.password && logInInfo.password.length >= 6, `passwordLogInNameError`, `Invalid password`)
+                    ]
+                    if (allPassed(ValidateResult)) {
+                        controller.login(logInInfo)
+                    }
                 }
                 break;
 
             }
     }
     view.setText = function(id, text) {
-        document.getElementById(id).innerText = text
-    }
-
+            document.getElementById(id).innerText = text
+        }
+        // console.log(ValidateResult)
     view.Validate = function(condition, idErrorTag, messageError) {
         if (condition) {
             view.setText(idErrorTag, ``)
+            return true
         } else {
             view.setText(idErrorTag, messageError)
+            return false
         }
     }
+}
+view.disable = function(id) {
+    document.getElementById(id).setAttribute(`disabled`, true)
+}
+
+view.enable = function(id) {
+    document.getElementById(id).removeAttribute(`disabled`)
+}
+
+function allPassed(ValidateResult) {
+    for (let result of ValidateResult) {
+        if (!result) {
+            return false
+        }
+    }
+    return true
 }
